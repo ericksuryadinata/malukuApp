@@ -8,7 +8,7 @@ class Page extends CoreBlade
 	public function __construct()
 	{
 		$this->views = __DIR__."/../views";
-		$this->cache = __DIR__."/../cache";
+		$this->cache = CACHEDIR;
 
 		parent::__construct($this->views, $this->cache);
 	}

@@ -19,14 +19,11 @@
  */
 
 
-Route::get('/', function(){
-
-    // In fact, THIS is your 'default_controller' route, because is defined as a GET route
-    // under the root '/' path, so Luthier set as it for you
-
-    ci()->load->view('welcome_message');
+Route::group('/', ['namespace' => 'Frontend'], function(){
+    Route::get('/','HomeController@index')->name('home.index');
 });
 
+require __DIR__ . '/admin.php';
 
 Route::set('404_override', function(){
     show_404();

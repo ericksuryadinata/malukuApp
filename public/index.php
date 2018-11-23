@@ -131,6 +131,14 @@ switch (ENVIRONMENT)
  */
 	$view_folder = '';
 
+/**
+ * --------------------------------------------------------------
+ * CACHE DIRECTORY NAME
+ * --------------------------------------------------------------
+ * 
+ * Set this to your desired cache directory
+ */
+	$cache_dir = '../storage/cache';
 
 /*
  * --------------------------------------------------------------------
@@ -234,6 +242,9 @@ switch (ENVIRONMENT)
 
 	// Name of the "system" directory
 	define('SYSDIR', basename(BASEPATH));
+
+	// path to storage directory
+	define("CACHEDIR",$cache_dir);
 
 	// The path to the "application" directory
 	if (is_dir($application_folder))
