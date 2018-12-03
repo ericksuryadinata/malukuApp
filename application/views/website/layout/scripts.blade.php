@@ -1,6 +1,5 @@
 <script type="text/javascript" src="{{base_url('assets/website/jquery/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{base_url('assets/website/bootstrap/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{base_url('assets/website/main.js')}}"></script>
 
 {{-- Use this if you always connect to internet --}}
 
