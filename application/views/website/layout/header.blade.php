@@ -8,23 +8,23 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{base_url('assets/website/images/pantai5.jpg')}}" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>TEMPAT WISATA DI MALUKU.</h1>
+                <img src="{{base_url('assets/website/images/BANNER-1.jpg')}}" alt="First slide">
+                <div class="carousel-caption">
+                    <h3>TEMPAT WISATA DI MALUKU.</h3>
                     <p>Maluku Negeri dari Timur yang sangat kaya, sering disebut juga tanah surga.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{base_url('assets/website/images/karang8.jpg')}}" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>TEMPAT WISATA DI MALUKU.</h1>
+                <img src="{{base_url('assets/website/images/BANNER-2.jpg')}}" alt="Second slide">
+                <div class="carousel-caption">
+                    <h3>TEMPAT WISATA DI MALUKU.</h3>
                     <p>Maluku Negeri dari Timur yang sangat kaya, sering disebut juga tanah surga.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{base_url('assets/website/images/pantai7.jpg')}}" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>TEMPAT WISATA DI MALUKU.</h1>
+                <img src="{{base_url('assets/website/images/BANNER-3.jpg')}}" alt="Third slide">
+                <div class="carousel-caption">
+                    <h3>TEMPAT WISATA DI MALUKU.</h3>
                     <p>Maluku Negeri dari Timur yang sangat kaya, sering disebut juga tanah surga.</p>
                 </div>
             </div>
