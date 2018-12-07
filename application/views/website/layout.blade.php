@@ -7,7 +7,6 @@
 </head>
 
 <body>
-    @include('website.layout.navbar')
     @include('website.layout.content')
     @include('website.layout.footer')
     @include('website.layout.scripts')

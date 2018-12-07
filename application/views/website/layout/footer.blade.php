@@ -1,7 +1,4 @@
 <!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-    </div>
-    <!-- /.container -->
+<footer class="container mt-5">
+    <p>© 2018 GIS(5289,5210)</p>
 </footer>

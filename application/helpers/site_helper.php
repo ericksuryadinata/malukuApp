@@ -109,96 +109,15 @@ if ( ! function_exists('remove_file'))
 	}
 }
 
-if (!function_exists('default_image_for')){
-	function default_image_for($type=null){
-		switch ($type) {
-			case 'box-ads':
-				return 'uploads/images/placeholder/box-ads.png';
-				break;
-			case 'long-ads':
-			    return 'uploads/images/placeholder/long-ads.png';
-				break;
-			case 'man':
-			    return 'uploads/images/placeholder/avatar.png';
-				break;
-			case 'women':
-			    return 'uploads/images/placeholder/women.png';
-				break;
-			case 'camera':
-			    return 'uploads/images/placeholder/camera.jpg';
-				break;
-			case 'video':
-			    return 'uploads/images/placeholder/video.jpg';
-				break;
-			case 'untag':
-			    return 'uploads/images/placeholder/untag.png';
-				break;
-			default:
-				return 'uploads/images/placeholder/basic.png';
-				break;
-		}
-	}
-}
-
 if (!function_exists('upload_path')){
-	function upload_path($type,$condition=null){
-		switch ($condition) {
-			case 'original':
-				return 'uploads/images/'.$type.'/'.'original/';
-				break;
-			case 'mobile':
-				return 'uploads/images/'.$type.'/'.'mobile/';
-				break;
-			case 'thumb':
-				return 'uploads/images/'.$type.'/'.'thumb/';
-				break;
-			case 'medium':
-				return 'uploads/images/'.$type.'/'.'medium/';
-				break;
-			case 'large':
-				return 'uploads/images/'.$type.'/'.'large/';
-				break;
-			case 'extra':
-				return 'uploads/images/'.$type.'/'.'extra/';
-				break;
-			case 'files':
-				return 'uploads/files/';
-				break;
-			case 'viewerjs':
-				return 'ViewerJS/#/uploads/files/';
-				break;
-			default:
-				return 'uploads/images/'.$type.'/';
-				break;
-		}
+	function upload_path($type){
+		return 'uploads/website/images';
 	}
 }
 
 if (!function_exists('image_path_for')){
-	function image_path_for($type,$condition=null){
-		switch ($condition) {
-			case 'original':
-				return 'uploads/images/'.$type.'/'.'original/';
-				break;
-			case 'mobile':
-				return 'uploads/images/'.$type.'/'.'mobile/';
-				break;
-			case 'thumb':
-				return 'uploads/images/'.$type.'/'.'thumb/';
-				break;
-			case 'medium':
-				return 'uploads/images/'.$type.'/'.'medium/';
-				break;
-			case 'large':
-				return 'uploads/images/'.$type.'/'.'large/';
-				break;
-			case 'extra':
-				return 'uploads/images/'.$type.'/'.'extra/';
-				break;
-			default:
-				return 'uploads/images/'.$type.'/';
-				break;
-		}
+	function image_path_for($file){
+		return 'uploads/website/images/'.$file;
 	}
 }
 
