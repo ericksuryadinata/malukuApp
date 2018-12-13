@@ -6,7 +6,10 @@
     @include('website.layout.navbar')
     <!-- Page Features -->
     <div class="container text-center">
-        <h2 class="text-center mt-2">{{ strtoupper($kabupaten->nama)}}</h2>
+        <div class="row mt-4">
+            <div class="col-md-4"><a href="{{$_SERVER['HTTP_REFERER']}}"><button class="btn btn-success float-left">Kembali</button></a></div>
+            <div class="col-md-8"><h2 class="float-left">{{ strtoupper($kabupaten->nama)}}</h2></div>
+        </div>
         <div class="row mt-3">
             <div class="col-md-4">
                 <h5 class="text-left mt-2">KATEGORI {{strtoupper($namaKategori)}}</h5>
