@@ -14,7 +14,7 @@
                 <a class="btn btn-primary nav-link mr-3" href="{{route('peta.index')}}">Peta</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-primary nav-link mr-3" href="profil.html">Profil</a>
+                <a class="btn btn-primary nav-link mr-3" href="{{route('profil.index')}}">Profil</a>
             </li>
         </ul>
     </div>

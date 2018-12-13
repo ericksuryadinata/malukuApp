@@ -7,6 +7,7 @@ class HomeController extends CI_Controller{
 		parent::__construct();
 		$this->load->model(array('HomeModel' => 'home'));
 	}
+	
     public function index(){
     	$kota = $this->home->selectData('*','kota','')->result();
         echo $this->page->tampil('website.landing.index',compact('kota'));
