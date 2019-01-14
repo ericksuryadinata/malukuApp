@@ -25,6 +25,7 @@ Route::group('/', ['namespace' => 'Frontend'], function(){
     Route::get('/kota/{id}/{name}/kategori/{kategori}','KategoriController@detail')->name('kategori.detail.index');
     Route::get('/peta','PetaController@index')->name('peta.index');
     Route::get('/profil','ProfilController@index')->name('profil.index');
+    Route::get('/search','SearchController@index')->name('search.index');
 });
 
 require __DIR__ . '/admin.php';

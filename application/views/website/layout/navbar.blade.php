@@ -16,6 +16,9 @@
             <li class="nav-item">
                 <a class="btn btn-primary nav-link mr-3" href="{{route('profil.index')}}">Profil</a>
             </li>
+            <li class="nav-item">
+                <a class="btn btn-primary nav-link mr-3" href="{{route('search.index')}}">Search</a>
+            </li>
         </ul>
     </div>
 </nav>
