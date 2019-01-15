@@ -12,4 +12,10 @@ class SearchController extends CI_Controller{
         $tempatWisata = $this->home->selectData('*, ST_AsWKT(`kordinat`) AS `kordinat`','tempat_wisata','')->result();
         echo $this->page->tampil('website.search.index', compact('tempatWisata'));
     }
+
+    public function search(){
+        $phrase = $this->input->get('phrase');
+        $tempatWisata = $this->home->selectData('*, ST_AsWKT(`kordinat`) AS `kordinat`','tempat_wisata','where nama LIKE "%'.$phrase.'%"')->result_object();
+        echo json_encode($tempatWisata);
+    }
 }

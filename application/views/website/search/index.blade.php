@@ -11,7 +11,7 @@
                 <form>
                     <div class="form-group">
                         <label for="carilokasiwisata">Cari Lokasi Wisata</label>
-                        <input type="text" name="cari" id="cari" placeholder="Cari lokasi wisata">
+                        <input class="form-control" type="text" name="cari" id="cari" placeholder="Cari lokasi wisata">
                     </div>
                     <button class="btn btn-primary" type="button">Cari !</button>
                 </form>
@@ -25,7 +25,9 @@
 </div>
 <!-- /.container -->
 @endsection
+
 @section('scripts')
+<script type="text/javascript" src="{{base_url('assets/website/ez/jquery.easy-autocomplete.min.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo getenv('GMAPS_API_KEY')?>"></script>
 <script type="text/javascript">
     function initMap(dest, data){
@@ -44,11 +46,9 @@
             mapTypeId:google.maps.MapTypeId.ROADMAP
         });
 
-        let koordinatFromDatabase = [];
         let lokasiWisata;
         let deskripsi = '';
         for (let pos = 0; pos < data.length; pos++) {
-            koordinatFromDatabase.push([]);
             lokasiWisata = data[pos].kordinat.replace('POINT(','');
             lokasiWisata = lokasiWisata.replace(')','');
             lokasiWisata = lokasiWisata.split(' ');
@@ -75,10 +75,9 @@
         }
     }
 
-    function drawMarker(dest,location){
+    function drawMarker(dest,data){
         let infowindow = new google.maps.InfoWindow();
-        let lokasiFromDatabase = {!!json_encode($tempatWisata)!!};
-        let lokasiPertama = lokasiFromDatabase[location].kordinat;
+        let lokasiPertama = data.kordinat;
         lokasiPertama = lokasiPertama.replace('POINT(','');
         lokasiPertama = lokasiPertama.replace(')','');
         lokasiPertama = lokasiPertama.split(' ');
@@ -95,7 +94,7 @@
             position  : lokasi,
             map       : map,
         });
-        let deskripsi = '<table><tr><img src="{{base_url()}}uploads/website/images/'+lokasiFromDatabase[location].gambar+'" height="100" width="100"></tr><tr><td>'+lokasiFromDatabase[location].deskripsi+'</td></tr></table>';
+        let deskripsi = '<table><tr><img src="{{base_url()}}uploads/website/images/'+data.gambar+'" height="100" width="100"></tr><tr><td>'+data.deskripsi+'</td></tr></table>';
         infowindow.setContent(deskripsi);
         infowindow.open(map, markerWisata);
 
@@ -103,20 +102,36 @@
             map.setZoom(5);
         })
 
-
     }
+    let dataSelected = {};
 
+    let options = {
+        url:function(phrase){
+            return '{{route('search.tempat')}}'+'/?phrase='+phrase;
+        },
+        list:{
+            onClickEvent:function(){
+                dataSelected = $("#cari").getSelectedItemData();
+                drawMarker('maps',dataSelected);
+            }
+        },
+        getValue: "nama",
+        requestDelay: 400
+    };
+    $("#cari").easyAutocomplete(options);
+    console.log(dataSelected);
+   
     window.onload = function (param) {
         let lokasiFromDatabase = {!!json_encode($tempatWisata)!!};
         initMap('maps',lokasiFromDatabase);
     }
 
-
-
+    
 </script>
 @endsection
  
 @section('styles')
+<link rel="stylesheet" type="text/css" href="{{base_url('assets/website/ez/easy-autocomplete.min.css')}}" />
 <style type="text/css">
     #maps {
         height: 500px;
